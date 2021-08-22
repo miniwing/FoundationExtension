@@ -8,6 +8,8 @@
 
 #import "UIWebView.h"
 
+#if __UIWebView__
+
 #if !defined(TARGET_OS_IOS) || TARGET_OS_IOS
 
 @implementation UIWebView (Shortcuts)
@@ -19,3 +21,5 @@
 @end
 
 #endif
+
+#endif /* __UIWebView__ */

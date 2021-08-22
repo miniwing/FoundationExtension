@@ -22,6 +22,13 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.tvos.deployment_target = '9.0'
 
+  s.pod_target_xcconfig          = {
+    'GCC_PREPROCESSOR_DEFINITIONS'      => [
+                                            'MODULE=\"UIKitExtension\"',
+                                            '__UIWebView__=0',
+                                           ]
+                                      }
+
   s.source_files = "UIKitExtension/*.{h,m}"
   s.public_header_files = "UIKitExtension/*.h"
   s.header_dir = "UIKitExtension"

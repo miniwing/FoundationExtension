@@ -18,6 +18,7 @@
 #import <UIKit/UIKit.h>
 #endif
 
+#if __UIWebView__
 
 #if !defined(TARGET_OS_IOS) || TARGET_OS_IOS
 
@@ -36,3 +37,5 @@
 @end
 
 #endif
+
+#endif /* __UIWebView__ */
