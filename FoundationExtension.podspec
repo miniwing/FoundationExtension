@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FoundationExtension"
-  s.version      = "2.1.0"
+  s.version      = "2.1.0-IDEA"
   s.summary      = "Foundation/UIKit extension kit. It is category based and looks familiar to Foundation/UIKit. It includes many common snippets as shortcut."
   s.description  = <<-DESC
                     This library includes small Foundation/Cocoa/UIKit extensions. This library does not includes high-level data structure, algorithm or frameworks, but collection of code snippets.
