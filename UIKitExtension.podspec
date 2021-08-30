@@ -33,5 +33,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "UIKitExtension/*.h"
   s.header_dir = "UIKitExtension"
   s.frameworks = "UIKit", "QuartzCore"
-  s.dependency "FoundationExtension", "~> 2.1.0"
+  s.dependency "FoundationExtension", "~> 2.1.0-IDEA"
 end
