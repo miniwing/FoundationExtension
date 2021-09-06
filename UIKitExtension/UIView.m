@@ -9,7 +9,7 @@
 @import QuartzCore;
 #import "UIView.h"
 
-const NSTimeInterval UIAViewAnimationDefaultDuraton = 0.2;
+const NSTimeInterval UIAViewAnimationDefaultDuraton = 0.25f;
 
 @implementation UIAViewHolder
 
