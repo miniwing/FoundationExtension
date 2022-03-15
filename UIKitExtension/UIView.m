@@ -7,7 +7,8 @@
 //
 
 @import QuartzCore;
-#import "UIView.h"
+//#import "UIView.h"
+#import "UIKitExtension/UIView.h"
 
 const NSTimeInterval UIAViewAnimationDefaultDuraton = 0.25f;
 

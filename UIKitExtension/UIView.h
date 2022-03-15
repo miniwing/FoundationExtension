@@ -12,10 +12,10 @@
 #import <UIKit/UIKit.h>
 //#endif
 
-#define UIViewAutoresizingFlexibleVertical (UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin)
+#define UIViewAutoresizingFlexibleVertical   (UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin)
 #define UIViewAutoresizingFlexibleHorizontal (UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin)
-#define UIViewAutoresizingFlexibleSize (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight)
-#define UIViewAutoresizingFlexibleAll (UIViewAutoresizingFlexibleVertical|UIViewAutoresizingFlexibleHorizontal)
+#define UIViewAutoresizingFlexibleSize       (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight)
+#define UIViewAutoresizingFlexibleAll        (UIViewAutoresizingFlexibleVertical|UIViewAutoresizingFlexibleHorizontal)
 
 /*!
  *  @brief The common animation duration constant of UIKit.
