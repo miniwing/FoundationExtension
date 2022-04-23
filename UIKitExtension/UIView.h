@@ -22,6 +22,7 @@
  *  @details This is just an assumation.
  */
 FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuraton;
+FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuraton;
 
 #if NS_BLOCKS_AVAILABLE
 /*!
