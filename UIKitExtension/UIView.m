@@ -13,6 +13,8 @@
 const NSTimeInterval UIAViewAnimationDefaultDuraton   = 0.25f;
 const NSTimeInterval UIAViewSpringWithDampingDuraton  = 0.5f;
 
+const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
+
 @implementation UIAViewHolder
 
 @synthesize view=_view;

@@ -24,6 +24,8 @@
 FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuraton;
 FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuraton;
 
+FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
+
 #if NS_BLOCKS_AVAILABLE
 /*!
  *  @brief Animation block signature for UIView animation methods.
