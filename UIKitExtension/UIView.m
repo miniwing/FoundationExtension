@@ -41,7 +41,11 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
 
 #if NS_BLOCKS_AVAILABLE
 + (void)animateWithDefaultDurationAnimations:(UIAViewAnimationBlock)animations {
-    [self animateWithDuration:UIAViewAnimationDefaultDuraton animations:animations];
+   
+//    [self animateWithDuration:UIAViewAnimationDefaultDuraton animations:animations];
+    [self animateWithDuration:[UIView animationDefaultDuraton] animations:animations];
+   
+    return;
 }
 #endif
 
@@ -62,14 +66,42 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
         self.hidden = NO;
     }
 
-    [[self class] animateWithDuration:UIAViewAnimationDefaultDuraton animations:^(void) {
-        self.alpha = endAlpha;
-    } completion:^(BOOL finished) {
-        if (hidden) {
-            self.alpha = backupAlpha;
-            self.hidden = YES; // value compatibility - this delayed action may be cause of unknown strange behavior.
-        }
-    }];
+//    [[self class] animateWithDuration:UIAViewAnimationDefaultDuraton animations:^(void) {
+//        self.alpha = endAlpha;
+//    } completion:^(BOOL finished) {
+//        if (hidden) {
+//            self.alpha = backupAlpha;
+//            self.hidden = YES; // value compatibility - this delayed action may be cause of unknown strange behavior.
+//        }
+//    }];
+
+   [[self class] animateWithDuration:[UIView animationDefaultDuraton] animations:^(void) {
+      
+      self.alpha = endAlpha;
+   }
+                          completion:^(BOOL finished) {
+      if (hidden) {
+         self.alpha = backupAlpha;
+         self.hidden = YES; // value compatibility - this delayed action may be cause of unknown strange behavior.
+      }
+   }];
+   
+   return;
+}
+
++ (NSTimeInterval)animationDefaultDuraton {
+   
+   return UIAViewAnimationDefaultDuraton;
+}
+
++ (NSTimeInterval)springWithDampingDuraton {
+   
+   return UIAViewSpringWithDampingDuraton;
+}
+
++ (CGFloat)springWithDampingRatio {
+   
+   return UIAViewSpringWithDampingRatio;
 }
 
 @end
