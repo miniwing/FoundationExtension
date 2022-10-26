@@ -21,7 +21,7 @@
  *  @brief The common animation duration constant of UIKit.
  *  @details This is just an assumation.
  */
-//FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuraton;
+//FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuration;
 //FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuraton;
 //
 //FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
@@ -68,7 +68,7 @@ typedef void (^UIAViewAnimationCompletionBlock)(BOOL finished);
 
 #if NS_BLOCKS_AVAILABLE
 /*!
- *  @brief Animate changes to one or more views using the UIKit deafult animation duration @ref UIAViewAnimationDefaultDuraton.
+ *  @brief Animate changes to one or more views using the UIKit deafult animation duration @ref UIAViewAnimationDefaultDuration.
  *  @param animations A block object containing the changes to commit to the views. This is where you programmatically change any animatable properties of the views in your view hierarchy. This block takes no parameters and has no return value. This parameter must not be NULL.
  *  @details
         This method performs the specified animations immediately using the UIViewAnimationOptionCurveEaseInOut and UIViewAnimationOptionTransitionNone animation options.
@@ -90,8 +90,8 @@ typedef void (^UIAViewAnimationCompletionBlock)(BOOL finished);
  */
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated;
 
-+ (NSTimeInterval)animationDefaultDuraton;
-+ (NSTimeInterval)springWithDampingDuraton;
++ (NSTimeInterval)animationDefaultDuration;
++ (NSTimeInterval)springWithDampingDuration;
 + (CGFloat)springWithDampingRatio;
 
 @end

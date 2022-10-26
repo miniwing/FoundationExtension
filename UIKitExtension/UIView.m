@@ -10,7 +10,7 @@
 #import "UIView.h"
 //#import "UIKitExtension/UIView.h"
 
-const NSTimeInterval UIAViewAnimationDefaultDuraton   = 0.25f;
+const NSTimeInterval UIAViewAnimationDefaultDuration   = 0.25f;
 const NSTimeInterval UIAViewSpringWithDampingDuraton  = 0.5f;
 
 const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
@@ -42,8 +42,8 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
 #if NS_BLOCKS_AVAILABLE
 + (void)animateWithDefaultDurationAnimations:(UIAViewAnimationBlock)animations {
    
-//    [self animateWithDuration:UIAViewAnimationDefaultDuraton animations:animations];
-    [self animateWithDuration:[UIView animationDefaultDuraton] animations:animations];
+//    [self animateWithDuration:[UIView animationDefaultDuration] animations:animations];
+    [self animateWithDuration:[UIView animationDefaultDuration] animations:animations];
    
     return;
 }
@@ -66,7 +66,7 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
         self.hidden = NO;
     }
 
-//    [[self class] animateWithDuration:UIAViewAnimationDefaultDuraton animations:^(void) {
+//    [[self class] animateWithDuration:[UIView animationDefaultDuration] animations:^(void) {
 //        self.alpha = endAlpha;
 //    } completion:^(BOOL finished) {
 //        if (hidden) {
@@ -75,7 +75,7 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
 //        }
 //    }];
 
-   [[self class] animateWithDuration:[UIView animationDefaultDuraton] animations:^(void) {
+   [[self class] animateWithDuration:[UIView animationDefaultDuration] animations:^(void) {
       
       self.alpha = endAlpha;
    }
@@ -89,12 +89,12 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
    return;
 }
 
-+ (NSTimeInterval)animationDefaultDuraton {
++ (NSTimeInterval)animationDefaultDuration {
    
-   return UIAViewAnimationDefaultDuraton;
+   return UIAViewAnimationDefaultDuration;
 }
 
-+ (NSTimeInterval)springWithDampingDuraton {
++ (NSTimeInterval)springWithDampingDuration {
    
    return UIAViewSpringWithDampingDuraton;
 }
