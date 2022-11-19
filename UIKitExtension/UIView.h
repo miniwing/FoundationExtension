@@ -22,7 +22,7 @@
  *  @details This is just an assumation.
  */
 //FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuration;
-//FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuraton;
+//FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuration;
 //
 //FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
 
