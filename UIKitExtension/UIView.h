@@ -21,10 +21,10 @@
  *  @brief The common animation duration constant of UIKit.
  *  @details This is just an assumation.
  */
-//FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuration;
-//FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuration;
-//
-//FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
+FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuration;
+FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuration;
+
+FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
 
 #if NS_BLOCKS_AVAILABLE
 /*!
