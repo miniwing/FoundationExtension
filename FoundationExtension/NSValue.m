@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSObject (NSValue)
 
 - (NSValue *)valueForObject {
-    return [NSValue valueWithNonretainedObject:self];
+   return [NSValue valueWithNonretainedObject:self];
 }
 
 @end

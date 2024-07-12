@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSBundle (Shortcuts)
 
 - (NSString *)pathForResourceFile:(NSString *)filename {
-    return [self pathForResource:filename ofType:@""];
+   return [self pathForResource:filename ofType:@""];
 }
 
 @end

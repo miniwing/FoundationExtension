@@ -14,21 +14,21 @@
 @synthesize major=_major, minor=_minor, bugfix=_bugfix;
 
 - (instancetype)initWithString:(NSString *)string {
-    self = [super init];
-    if (self != nil) {
-        self->_string = [string copy];
-        NSArray *parts = [string componentsSeparatedByString:@"."];
-        self->_major = [parts[0] integerValue];
-        self->_minor = [parts[1] integerValue];
-        if (parts.count > 2) {
-            self->_bugfix = [parts[2] integerValue];
-        }
-    }
-    return self;
+   self = [super init];
+   if (self != nil) {
+      self->_string = [string copy];
+      NSArray *parts = [string componentsSeparatedByString:@"."];
+      self->_major = [parts[0] integerValue];
+      self->_minor = [parts[1] integerValue];
+      if (parts.count > 2) {
+         self->_bugfix = [parts[2] integerValue];
+      }
+   }
+   return self;
 }
 
 + (instancetype)versionWithString:(NSString *)string {
-    return [[self alloc] initWithString:string];
+   return [[self alloc] initWithString:string];
 }
 
 

@@ -20,9 +20,9 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.static_framework = true
   s.osx.deployment_target = '10.10'
-  s.ios.deployment_target = '10.0'
-  s.tvos.deployment_target = '10.0'
-  s.watchos.deployment_target    = '4.3'
+  s.ios.deployment_target = '12.0'
+  s.tvos.deployment_target = '12.0'
+  s.watchos.deployment_target    = '5.0'
   s.header_dir = "FoundationExtension"
 
   s.subspec "FoundationExtensionRC" do |ss|

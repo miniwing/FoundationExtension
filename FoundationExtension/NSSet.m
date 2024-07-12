@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSSet (Enumerator)
 
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator {
-    self = [self initWithArray:[NSArray arrayWithEnumerator:enumerator]];
-    return self;
+   self = [self initWithArray:[NSArray arrayWithEnumerator:enumerator]];
+   return self;
 }
 
 @end

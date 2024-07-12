@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSDate (Shortcuts)
 
 - (NSDateComponents *)components {
-    return [[NSCalendar currentCalendar] components:NSEraCalendarUnit
-            | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
-            | NSHourCalendarUnit | NSMinuteCalendarUnit| NSSecondCalendarUnit
-            | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit
-            | NSQuarterCalendarUnit //| NSCalendarCalendarUnit | NSTimeZoneCalendarUnit
-                                           fromDate:self];
+   return [[NSCalendar currentCalendar] components:NSEraCalendarUnit
+           | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
+           | NSHourCalendarUnit | NSMinuteCalendarUnit| NSSecondCalendarUnit
+           | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit
+           | NSQuarterCalendarUnit //| NSCalendarCalendarUnit | NSTimeZoneCalendarUnit
+                                          fromDate:self];
 }
 
 @end

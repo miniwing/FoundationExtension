@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSCharacterSet (Shortcut)
 
 + (instancetype)emptyCharacterSet {
-    static NSCharacterSet *characterSet = nil;
-    if (characterSet == nil) {
-        characterSet = [[NSCharacterSet alloc] init];
-    }
-    return characterSet;
+   static NSCharacterSet *characterSet = nil;
+   if (characterSet == nil) {
+      characterSet = [[NSCharacterSet alloc] init];
+   }
+   return characterSet;
 }
 
 @end

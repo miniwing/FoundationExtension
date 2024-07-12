@@ -16,27 +16,27 @@ NS_ASSUME_NONNULL_BEGIN
 @dynamic locale;
 
 + (NSNumberFormatter *)formatter {
-    return [[self alloc] init];
+   return [[self alloc] init];
 }
 
 - (instancetype)initWithNumberStyle:(NSNumberFormatterStyle)style {
-    self = [self init];
-    if (self != nil) {
-        [self setNumberStyle:style];
-    }
-    return self;
+   self = [self init];
+   if (self != nil) {
+      [self setNumberStyle:style];
+   }
+   return self;
 }
 
 + (NSNumberFormatter *)formatterWithNumberStyle:(NSNumberFormatterStyle)style {
-    return [[self alloc] initWithNumberStyle:style];
+   return [[self alloc] initWithNumberStyle:style];
 }
 
 + (NSString *)formattedStringByDecimalStyleForNumber:(NSNumber *)number {
-    return [[self formatterWithNumberStyle:NSNumberFormatterDecimalStyle] stringFromNumber:number];
+   return [[self formatterWithNumberStyle:NSNumberFormatterDecimalStyle] stringFromNumber:number];
 }
 
 + (NSString *)formattedStringByDecimalStyleForInteger:(NSInteger)integer {
-    return [self formattedStringByDecimalStyleForNumber:@(integer)];
+   return [self formattedStringByDecimalStyleForNumber:@(integer)];
 }
 
 @end

@@ -15,18 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSNumber (Description)
 
 - (NSString *)typeFormedDescription {
-    if ([self.class.name isEqualToString:@"__NSCFNumber"]) {
-        NSString *defaultDescription = [self description];
-        if (strcmp(self.objCType, @encode(float)) == 0 || strcmp(self.objCType, @encode(double)) == 0) {
-            if ([defaultDescription rangeOfString:@"."].location == NSNotFound) {
-                return [defaultDescription stringByAppendingString:@".0"];
-            }
-        }
-        return defaultDescription;
-    } else if ([self.class.name isEqualToString:@"__NSCFBoolean"]) {
-        return [self boolValue] ? @"YES" : @"NO";
-    }
-    return [self description];
+   if ([self.class.name isEqualToString:@"__NSCFNumber"]) {
+      NSString *defaultDescription = [self description];
+      if (strcmp(self.objCType, @encode(float)) == 0 || strcmp(self.objCType, @encode(double)) == 0) {
+         if ([defaultDescription rangeOfString:@"."].location == NSNotFound) {
+            return [defaultDescription stringByAppendingString:@".0"];
+         }
+      }
+      return defaultDescription;
+   } else if ([self.class.name isEqualToString:@"__NSCFBoolean"]) {
+      return [self boolValue] ? @"YES" : @"NO";
+   }
+   return [self description];
 }
 
 @end
@@ -35,13 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSDecimalNumber (Description)
 
 - (NSString *)typeFormedDescription {
-    NSString *defaultDescription = [self description];
-    if (strcmp(self.objCType, @encode(float)) == 0 || strcmp(self.objCType, @encode(double)) == 0) {
-        if ([defaultDescription rangeOfString:@"."].location == NSNotFound) {
-            return [defaultDescription stringByAppendingString:@".0"];
-        }
-    }
-    return defaultDescription;
+   NSString *defaultDescription = [self description];
+   if (strcmp(self.objCType, @encode(float)) == 0 || strcmp(self.objCType, @encode(double)) == 0) {
+      if ([defaultDescription rangeOfString:@"."].location == NSNotFound) {
+         return [defaultDescription stringByAppendingString:@".0"];
+      }
+   }
+   return defaultDescription;
 }
 
 @end

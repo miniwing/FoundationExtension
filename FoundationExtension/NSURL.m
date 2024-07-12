@@ -21,77 +21,77 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSURL (Creations)
 
 - (instancetype)initResourceURLWithPath:(NSString *)path {
-    if (path == nil) {
-        return nil;
-    }
-    NSString *prefix = @"res://";
-    if ([path hasPrefix:prefix]) {
-        path = [path substringFromIndex:prefix.length];
-    }
-    NSString *resPath = [[NSBundle mainBundle] pathForResourceFile:path];
-    if (resPath == nil) {
-        resPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path]; // iPhoneOS3 support
-    }
-    dlog(PATH_DEBUG, @"abstract resource path: %@", resPath);
-    return [self initFileURLWithPath:resPath];
+   if (path == nil) {
+      return nil;
+   }
+   NSString *prefix = @"res://";
+   if ([path hasPrefix:prefix]) {
+      path = [path substringFromIndex:prefix.length];
+   }
+   NSString *resPath = [[NSBundle mainBundle] pathForResourceFile:path];
+   if (resPath == nil) {
+      resPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path]; // iPhoneOS3 support
+   }
+   dlog(PATH_DEBUG, @"abstract resource path: %@", resPath);
+   return [self initFileURLWithPath:resPath];
 }
 
 - (instancetype)initConfigurationURLWithPath:(NSString *)path {
-    if (path == nil) {
-        return nil;
-    }
-    NSString *prefix = @"conf://";
-    if ([path hasPrefix:prefix]) {
-        path = [path substringFromIndex:prefix.length];
-    }
-    NSString *confPath = NSPathForUserConfigurationFile(path);
-    dlog(PATH_DEBUG, @"abstract configuration path: %@", confPath);
-    return [self initFileURLWithPath:confPath];
+   if (path == nil) {
+      return nil;
+   }
+   NSString *prefix = @"conf://";
+   if ([path hasPrefix:prefix]) {
+      path = [path substringFromIndex:prefix.length];
+   }
+   NSString *confPath = NSPathForUserConfigurationFile(path);
+   dlog(PATH_DEBUG, @"abstract configuration path: %@", confPath);
+   return [self initFileURLWithPath:confPath];
 }
 
 - (instancetype)initTemporaryURLWithPath:(NSString *)path {
-    if (path == nil) {
-        return nil;
-    }
-    NSString *prefix = @"tmp://";
-    if ([path hasPrefix:prefix]) {
-        path = [path substringFromIndex:prefix.length];
-    }
-    NSString *tempPath = NSPathForTemporaryFile(path);
-    dlog(PATH_DEBUG, @"abstract temporary path: %@", tempPath);
-    return [self initFileURLWithPath:tempPath];
+   if (path == nil) {
+      return nil;
+   }
+   NSString *prefix = @"tmp://";
+   if ([path hasPrefix:prefix]) {
+      path = [path substringFromIndex:prefix.length];
+   }
+   NSString *tempPath = NSPathForTemporaryFile(path);
+   dlog(PATH_DEBUG, @"abstract temporary path: %@", tempPath);
+   return [self initFileURLWithPath:tempPath];
 }
 
 - (instancetype)initSmartURLWithPath:(NSString *)path {
-    if ([path hasHTTPPrefix]) {
-        return [self initWithString:path];
-    }
-    if ([path hasPrefix:@"res://"]) {
-        return [self initResourceURLWithPath:path];
-    }
-    if ([path hasPrefix:@"conf://"]) {
-        return [self initConfigurationURLWithPath:path];
-    }
-    if ([path hasPrefix:@"tmp://"]) {
-        return [self initConfigurationURLWithPath:path];
-    }
-    return [self initFileURLWithPath:path];
+   if ([path hasHTTPPrefix]) {
+      return [self initWithString:path];
+   }
+   if ([path hasPrefix:@"res://"]) {
+      return [self initResourceURLWithPath:path];
+   }
+   if ([path hasPrefix:@"conf://"]) {
+      return [self initConfigurationURLWithPath:path];
+   }
+   if ([path hasPrefix:@"tmp://"]) {
+      return [self initConfigurationURLWithPath:path];
+   }
+   return [self initFileURLWithPath:path];
 }
 
 + (instancetype)resourceURLWithPath:(NSString *)path {
-    return [[self alloc] initResourceURLWithPath:path];
+   return [[self alloc] initResourceURLWithPath:path];
 }
 
 + (instancetype)configurationURLWithPath:(NSString *)path {
-    return [[self alloc] initConfigurationURLWithPath:path];
+   return [[self alloc] initConfigurationURLWithPath:path];
 }
 
 + (instancetype)temporaryURLWithPath:(NSString *)path {
-    return [[self alloc] initTemporaryURLWithPath:path];
+   return [[self alloc] initTemporaryURLWithPath:path];
 }
 
 + (instancetype)smartURLWithPath:(NSString *)path {
-    return [[self alloc] initSmartURLWithPath:path];
+   return [[self alloc] initSmartURLWithPath:path];
 }
 
 @end
@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSURL (CFURL)
 
 - (BOOL)hasDirectoryPath {
-    return CFURLHasDirectoryPath((CFURLRef)self);
+   return CFURLHasDirectoryPath((CFURLRef)self);
 }
 
 @end
@@ -108,56 +108,56 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSString (NSURL)
 
 - (NSString *)stringByAddingPercentEncodingWithoutAllowedCharacters {
-    NSCharacterSet *characterSet = [NSCharacterSet emptyCharacterSet];
-    return [self stringByAddingPercentEncodingWithAllowedCharacters:characterSet];
+   NSCharacterSet *characterSet = [NSCharacterSet emptyCharacterSet];
+   return [self stringByAddingPercentEncodingWithAllowedCharacters:characterSet];
 }
 
 - (NSString *)stringByAddingPercentEncodingForURLQuery {
-    NSCharacterSet *characterSet = [NSCharacterSet URLQueryAllowedCharacterSet];
-    return [self stringByAddingPercentEncodingWithAllowedCharacters:characterSet];
+   NSCharacterSet *characterSet = [NSCharacterSet URLQueryAllowedCharacterSet];
+   return [self stringByAddingPercentEncodingWithAllowedCharacters:characterSet];
 }
 
 - (BOOL)hasHTTPPrefix {
-    NSString *regexkey = @"^https?://.*";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexkey];
-    return [predicate evaluateWithObject:self];
+   NSString *regexkey = @"^https?://.*";
+   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexkey];
+   return [predicate evaluateWithObject:self];
 }
 
 - (BOOL)hasSmartURLPrefix {
-    return [self hasHTTPPrefix] || [self hasPrefix:@"res://"] || [self hasPrefix:@"conf://"];
+   return [self hasHTTPPrefix] || [self hasPrefix:@"res://"] || [self hasPrefix:@"conf://"];
 }
 
 - (nullable NSString *)URLProtocol {
-    NSString *regexkey = @"^[a-zA-Z]*://.*";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexkey];
-    if (![predicate evaluateWithObject:self])
-        return nil;
-    NSRange delemeterRange = [self rangeOfString:@"://"];
-    return [self substringFromIndex:0 length:delemeterRange.location];
+   NSString *regexkey = @"^[a-zA-Z]*://.*";
+   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexkey];
+   if (![predicate evaluateWithObject:self])
+      return nil;
+   NSRange delemeterRange = [self rangeOfString:@"://"];
+   return [self substringFromIndex:0 length:delemeterRange.location];
 }
 
 - (nullable NSURL *)URL {
-    return [NSURL URLWithString:self];
+   return [NSURL URLWithString:self];
 }
 
 - (nullable NSURL *)fileURL {
-    return [NSURL fileURLWithPath:self];
+   return [NSURL fileURLWithPath:self];
 }
 
 - (nullable NSURL *)resourceURL {
-    return [NSURL resourceURLWithPath:self];
+   return [NSURL resourceURLWithPath:self];
 }
 
 - (nullable NSURL *)configurationURL {
-    return [NSURL configurationURLWithPath:self];
+   return [NSURL configurationURLWithPath:self];
 }
 
 - (nullable NSURL *)temporaryURL {
-    return [NSURL temporaryURLWithPath:self];
+   return [NSURL temporaryURLWithPath:self];
 }
 
 - (nullable NSURL *)smartURL {
-    return [NSURL smartURLWithPath:self];
+   return [NSURL smartURLWithPath:self];
 }
 
 @end

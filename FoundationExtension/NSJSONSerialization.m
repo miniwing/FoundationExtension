@@ -19,32 +19,32 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSJSONSerialization (Shortcuts)
 
 + (nullable id)JSONObjectWithString:(NSString *)string options:(NSJSONReadingOptions)opt error:(out NSError **)error {
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-    return [self JSONObjectWithData:data options:opt error:error];
+   NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+   return [self JSONObjectWithData:data options:opt error:error];
 }
 
 + (nullable NSString *)stringWithJSONObject:(id)obj options:(NSJSONWritingOptions)opt error:(out NSError **)error {
-    NSData *data = [self dataWithJSONObject:obj options:opt error:error];
-    if (data == nil) {
-        return nil;
-    }
-    return [NSString stringWithUTF8Data:data];
+   NSData *data = [self dataWithJSONObject:obj options:opt error:error];
+   if (data == nil) {
+      return nil;
+   }
+   return [NSString stringWithUTF8Data:data];
 }
 
 + (nullable id)JSONObjectWithURLRequest:(NSURLRequest *)URLRequest options:(NSJSONReadingOptions)opt error:(out NSError **)error {
-    NSData *data = [NSData dataWithContentsOfURLRequest:URLRequest error:error];
-    if (data == nil) {
-        return nil;
-    }
-    return [self JSONObjectWithData:data options:opt error:error];
+   NSData *data = [NSData dataWithContentsOfURLRequest:URLRequest error:error];
+   if (data == nil) {
+      return nil;
+   }
+   return [self JSONObjectWithData:data options:opt error:error];
 }
 
 + (nullable id)JSONObjectWithURL:(NSURL *)URL options:(NSJSONReadingOptions)opt error:(out NSError **)error {
-    NSData *data = [NSData dataWithContentsOfURL:URL options:0 error:error];
-    if (data == nil) {
-        return nil;
-    }
-    return [self JSONObjectWithData:data options:opt error:error];
+   NSData *data = [NSData dataWithContentsOfURL:URL options:0 error:error];
+   if (data == nil) {
+      return nil;
+   }
+   return [self JSONObjectWithData:data options:opt error:error];
 }
 
 @end

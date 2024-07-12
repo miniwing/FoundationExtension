@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSAttributedString (Shortcuts)
 
 + (id)attributedString {
-    return [[self alloc] init];
+   return [[self alloc] init];
 }
 
 @end

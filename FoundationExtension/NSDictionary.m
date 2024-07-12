@@ -15,15 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSDictionary (Shortcuts)
 
 - (BOOL)containsKey:(id)key {
-    return [self.allKeys containsObject:key];
+   return [self.allKeys containsObject:key];
 }
 
 - (nullable id)anyKey {
-    return [self.keyEnumerator nextObject];
+   return [self.keyEnumerator nextObject];
 }
 
 - (nullable id)anyObject {
-    return [self.objectEnumerator nextObject];
+   return [self.objectEnumerator nextObject];
 }
 
 @end
@@ -32,23 +32,23 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSDictionary (NSData)
 
 - (instancetype)initWithData:(NSData *)data {
-    return [self initWithData:data format:NULL error:NULL];
+   return [self initWithData:data format:NULL error:NULL];
 }
 
 + (instancetype)dictionaryWithData:(NSData *)data {
-    return [[self alloc] initWithData:data];
+   return [[self alloc] initWithData:data];
 }
 
 - (instancetype)initWithData:(NSData *)data format:(NSPropertyListFormat *_Nullable)format error:(out NSError **)error {
-    NSDictionary *contents = [data propertyListObjectUsingFormat:format error:error];
-    if (contents == nil) {
-        return nil;
-    }
-    return [self initWithDictionary:contents];
+   NSDictionary *contents = [data propertyListObjectUsingFormat:format error:error];
+   if (contents == nil) {
+      return nil;
+   }
+   return [self initWithDictionary:contents];
 }
 
 + (instancetype)dictionaryWithData:(NSData *)data format:(NSPropertyListFormat *_Nullable)format error:(out NSError **)error {
-    return [[self alloc] initWithData:data format:format error:error];
+   return [[self alloc] initWithData:data format:format error:error];
 }
 
 @end

@@ -13,25 +13,25 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation NSNull (Tools)
 
 + (BOOL)objectIsNull:(id _Nullable)obj {
-    return obj == [NSNull null];
+   return obj == [NSNull null];
 }
 
 + (BOOL)objectIsNilOrNull:(id _Nullable)obj {
-    return obj == nil || obj == [NSNull null];
+   return obj == nil || obj == [NSNull null];
 }
 
 + (id)nullIfObjectIsNil:(id _Nullable)obj {
-    if (obj == nil) {
-        return [NSNull null];
-    }
-    return obj;
+   if (obj == nil) {
+      return [NSNull null];
+   }
+   return obj;
 }
 
 + (id)nilIfObjectIsNull:(id _Nullable)obj {
-    if (obj == [NSNull null]) {
-        return nil;
-    }
-    return obj;
+   if (obj == [NSNull null]) {
+      return nil;
+   }
+   return obj;
 }
 
 @end
