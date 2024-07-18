@@ -19,9 +19,10 @@ Pod::Spec.new do |s|
   s.dependency "cdebug", "~> 1.3"
   s.requires_arc = true
   s.static_framework = true
-  s.osx.deployment_target = '10.10'
-  s.ios.deployment_target = '12.0'
-  s.tvos.deployment_target = '12.0'
+  s.tvos.deployment_target       = '12.0'
+  s.ios.deployment_target        = '12.0'
+
+  s.osx.deployment_target        = '10.15'
   s.watchos.deployment_target    = '5.0'
   s.header_dir = "FoundationExtension"
 
