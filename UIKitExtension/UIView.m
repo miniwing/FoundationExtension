@@ -11,9 +11,9 @@
 //#import "UIKitExtension/UIView.h"
 
 const NSTimeInterval UIAViewAnimationDefaultDuration  = 0.25f;
-const NSTimeInterval UIAViewSpringWithDampingDuration = 0.5f;
+const NSTimeInterval UIAViewSpringWithDampingDuration = 0.50f;
 
-const CGFloat        UIAViewSpringWithDampingRatio    = 1.0f;
+const CGFloat        UIAViewSpringWithDampingRatio    = 1.00f;
 
 @implementation UIAViewHolder
 
