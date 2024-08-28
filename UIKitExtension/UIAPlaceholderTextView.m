@@ -38,7 +38,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_didEndEditing) name:UITextViewTextDidEndEditingNotification object:nil];
 
     UITextView *view = self->_placeholderTextView = [[UITextView alloc] initWithFrame:self.bounds];
-    view.backgroundColor = [UIColor clearColor];
+    view.backgroundColor = UIColor.clearColor;
     view.textColor = [UIColor grayColor];
     view.editable = NO;
     view.userInteractionEnabled = NO;

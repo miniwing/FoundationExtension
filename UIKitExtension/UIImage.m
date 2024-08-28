@@ -100,7 +100,7 @@
 + (UIImage *)clearImage {
     static UIImage *image = nil;
     if (image == nil) {
-        image = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(1.0, 1.0)];
+        image = [UIImage imageWithColor:UIColor.clearColor size:CGSizeMake(1.0, 1.0)];
     }
     return image;
 }
