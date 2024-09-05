@@ -10,7 +10,7 @@
 #import "UIView.h"
 //#import "UIKitExtension/UIView.h"
 
-const NSTimeInterval UIAViewAnimationDefaultDuration  = 0.25f;
+const NSTimeInterval UIAViewAnimationDefaultDuration  = 0.35f;
 const NSTimeInterval UIAViewSpringWithDampingDuration = 0.50f;
 
 const CGFloat        UIAViewSpringWithDampingRatio    = 1.00f;
