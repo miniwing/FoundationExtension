@@ -21,10 +21,11 @@
  *  @brief The common animation duration constant of UIKit.
  *  @details This is just an assumation.
  */
-FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuration;
-FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuration;
-
-FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
+// FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDelay;
+// FOUNDATION_EXTERN const NSTimeInterval UIAViewAnimationDefaultDuration;
+// FOUNDATION_EXTERN const NSTimeInterval UIAViewSpringWithDampingDuration;
+//
+// FOUNDATION_EXTERN const CGFloat        UIAViewSpringWithDampingRatio;
 
 #if NS_BLOCKS_AVAILABLE
 /*!
@@ -90,9 +91,15 @@ typedef void (^UIAViewAnimationCompletionBlock)(BOOL finished);
  */
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated;
 
-+ (NSTimeInterval)animationDefaultDuration;
-+ (NSTimeInterval)springWithDampingDuration;
-+ (CGFloat)springWithDampingRatio;
+
+/*!
+ *  Default Time
+ */
+@property (class, nonatomic, readonly) NSTimeInterval animationDefaultDelay;
+@property (class, nonatomic, readonly) NSTimeInterval animationDefaultDuration;
+@property (class, nonatomic, readonly) NSTimeInterval springWithDampingDuration;
+@property (class, nonatomic, readonly) CGFloat springWithDampingRatio;
+
 
 @end
 

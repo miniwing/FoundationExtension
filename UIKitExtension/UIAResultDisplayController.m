@@ -121,8 +121,8 @@
         };
 
         if (animated) {
-//            [NSTimer dispatchTimerWithTimeInterval:[UIView animationDefaultDuration] block:finish];
-            [NSTimer dispatchTimerWithTimeInterval:[UIView animationDefaultDuration] block:finish];
+//            [NSTimer dispatchTimerWithTimeInterval:UIView.animationDefaultDuration block:finish];
+            [NSTimer dispatchTimerWithTimeInterval:UIView.animationDefaultDuration block:finish];
         } else {
             finish();
         }
@@ -243,8 +243,8 @@
                 [self->_delegate resultDisplayController:self willUnloadResultView:resultView];
             }
             
-//            [NSTimer dispatchTimerWithTimeInterval:[UIView animationDefaultDuration] block:finish];
-            [NSTimer dispatchTimerWithTimeInterval:[UIView animationDefaultDuration] block:finish];
+//            [NSTimer dispatchTimerWithTimeInterval:UIView.animationDefaultDuration block:finish];
+            [NSTimer dispatchTimerWithTimeInterval:UIView.animationDefaultDuration block:finish];
         } else {
             finish();
         }

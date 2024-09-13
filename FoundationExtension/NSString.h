@@ -20,6 +20,7 @@
 #endif
 
 #import <FoundationExtension/NSMacro.h>
+#import <FoundationExtension/NSObjectRC.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithInteger:(NSInteger)value;
 
+
 /*!
  *  @brief Initialize an NSString object with concatnating given arguments.
  *  @details Appends all arguments to first string one by one by order.
@@ -50,6 +52,21 @@ NS_ASSUME_NONNULL_BEGIN
  *  @see initWithInteger:
  */
 + (instancetype)stringWithInteger:(NSInteger)value;
+
+
+/*!
+ *  @brief Initialize an NSString from long long value.
+ *  @details Implemented with [NSString initWithFormat:][0]
+ */
+- (instancetype)initWithLongLong:(NSLongLong)value;
+
+/*! @name Creating a String */
+
+/*!
+ *  @brief Creates and returns an NSString from long long value.
+ *  @see initWithLongLong:
+ */
++ (instancetype)stringWithLongLong:(NSLongLong)value;
 
 /*!
  *  @brief Creates and returns an NSString object initialized by using a given format string as a template into which the remaining argument values are substituted according to the user’s default locale.

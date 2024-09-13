@@ -10,6 +10,7 @@
 #import "UIView.h"
 //#import "UIKitExtension/UIView.h"
 
+const NSTimeInterval UIAViewAnimationDefaultDelay     = 0.15f;
 const NSTimeInterval UIAViewAnimationDefaultDuration  = 0.35f;
 const NSTimeInterval UIAViewSpringWithDampingDuration = 0.50f;
 
@@ -42,8 +43,8 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.00f;
 #if NS_BLOCKS_AVAILABLE
 + (void)animateWithDefaultDurationAnimations:(UIAViewAnimationBlock)animations {
    
-//    [self animateWithDuration:[UIView animationDefaultDuration] animations:animations];
-    [self animateWithDuration:[UIView animationDefaultDuration] animations:animations];
+//    [self animateWithDuration:UIView.animationDefaultDuration animations:animations];
+    [self animateWithDuration:UIView.animationDefaultDuration animations:animations];
    
     return;
 }
@@ -60,13 +61,14 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.00f;
 
     if (hidden) {
         endAlpha = .0;
-    } else {
+    }
+    else {
         self.alpha = .0;
         endAlpha = backupAlpha;
         self.hidden = NO;
     }
 
-//    [[self class] animateWithDuration:[UIView animationDefaultDuration] animations:^(void) {
+//    [[self class] animateWithDuration:UIView.animationDefaultDuration animations:^(void) {
 //        self.alpha = endAlpha;
 //    } completion:^(BOOL finished) {
 //        if (hidden) {
@@ -75,7 +77,7 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.00f;
 //        }
 //    }];
 
-   [[self class] animateWithDuration:[UIView animationDefaultDuration] animations:^(void) {
+   [[self class] animateWithDuration:UIView.animationDefaultDuration animations:^(void) {
       
       self.alpha = endAlpha;
    }
@@ -87,6 +89,11 @@ const CGFloat        UIAViewSpringWithDampingRatio    = 1.00f;
    }];
    
    return;
+}
+
++ (NSTimeInterval)animationDefaultDelay {
+   
+   return UIAViewAnimationDefaultDelay;
 }
 
 + (NSTimeInterval)animationDefaultDuration {

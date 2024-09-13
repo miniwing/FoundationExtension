@@ -6,11 +6,21 @@
 //  Copyright 2010 youknowone.org All rights reserved.
 //
 
+#import "NSNumber.h"
+
 #import "NSString.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @implementation NSString (Creations)
+
+- (instancetype)initWithLongLong:(NSLongLong)value {
+   return [self initWithFormat:@"%lld", value];
+}
+
++ (instancetype)stringWithLongLong:(NSLongLong)value {
+   return [[self alloc] initWithLongLong:value];
+}
 
 - (instancetype)initWithInteger:(NSInteger)value {
 #ifdef __LP64__

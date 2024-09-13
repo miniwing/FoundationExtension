@@ -23,3 +23,6 @@
 #define __nullable
 #define __nonnull
 #endif
+
+typedef signed long long   NSLongLong;
+typedef unsigned long long NSULongLong;
