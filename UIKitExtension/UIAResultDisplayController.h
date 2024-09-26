@@ -6,11 +6,13 @@
 //  Copyright (c) 2013 youknowone.org. All rights reserved.
 //
 
-#if __has_feature(modules)
-@import UIKit;
-#else
+//#if __has_feature(modules)
+//@import UIKit;
+//#else
+//#import <UIKit/UIKit.h>
+//#endif
+
 #import <UIKit/UIKit.h>
-#endif
 
 
 #if NS_BLOCKS_AVAILABLE

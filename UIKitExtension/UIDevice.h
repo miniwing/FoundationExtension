@@ -12,13 +12,16 @@
  *      [0]: http://developer.apple.com/library/ios/#documentation/uikit/reference/UIDevice_Class/Reference/UIDevice.html
  */
 
-#if __has_feature(modules)
-@import UIKit;
-@import FoundationExtension;
-#else
+//#if __has_feature(modules)
+//@import UIKit;
+//@import FoundationExtension;
+//#else
+//#import <UIKit/UIKit.h>
+//#import <FoundationExtension/NSAVersion.h>
+//#endif
+
 #import <UIKit/UIKit.h>
 #import <FoundationExtension/NSAVersion.h>
-#endif
 
 /*!
  *  @brief [UIDevice][0] shortcuts.

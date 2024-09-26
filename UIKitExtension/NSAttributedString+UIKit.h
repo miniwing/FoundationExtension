@@ -19,11 +19,13 @@
  */
 
 
-#if __has_feature(modules)
-@import UIKit;
-#else
+//#if __has_feature(modules)
+//@import UIKit;
+//#else
+//#import <UIKit/UIKit.h>
+//#endif
+
 #import <UIKit/UIKit.h>
-#endif
 
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 60000

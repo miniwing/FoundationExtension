@@ -27,11 +27,13 @@ FOUNDATION_EXPORT double UIKitExtensionVersionNumber;
 FOUNDATION_EXPORT const unsigned char UIKitExtensionVersionString[];
 
 
-#if __has_feature(modules)
-@import UIKit;
-#else
+//#if __has_feature(modules)
+//@import UIKit;
+//#else
+//#import <UIKit/UIKit.h>
+//#endif
+
 #import <UIKit/UIKit.h>
-#endif
 
 // depenency level 0
 #import <UIKitExtension/NSAttributedString+UIKit.h>         // level: 0 / deps(1): NSADictionary / internal(0):

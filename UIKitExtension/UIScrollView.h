@@ -12,11 +12,13 @@
  *      [0]: http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIScrollView_Class/Reference/UIScrollView.html
  */
 
-#if __has_feature(modules)
-@import UIKit;
-#else
+//#if __has_feature(modules)
+//@import UIKit;
+//#else
+//#import <UIKit/UIKit.h>
+//#endif
+
 #import <UIKit/UIKit.h>
-#endif
 
 
 /*!
